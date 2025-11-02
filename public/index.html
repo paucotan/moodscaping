@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moodscaper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <h1>Welcome to <span class="brand">Moodscaper</span></h1>
+        <p class="hero-tagline">
+          Find a calming pocket of inspiration with curated quotes and imagery tailored to your mood.
+        </p>
+      </header>
+
+      <main class="content">
+        <section class="mood-card" aria-live="polite">
+          <figure class="mood-visual">
+            <img
+              id="image-portrait"
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bW9vbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=960&q=60"
+              alt="A serene moonlit landscape with a calm lake reflecting the moonlight, surrounded by silhouetted trees under a starry sky."
+            >
+            <figcaption id="image-attribution" class="mood-caption">Moodscaper inspiration library</figcaption>
+          </figure>
+
+          <section id="quote-container" class="mood-quote" aria-live="polite">
+            <p id="quote-portrait">
+              “If you die before you die, you won't die when you die.”
+              <span class="quote-author">— Sample Author</span>
+            </p>
+          </section>
+        </section>
+
+        <section class="controls" aria-label="Mood controls">
+          <form id="keyword-form" class="keyword-form">
+            <label class="visually-hidden" for="text-input">Enter a mood keyword</label>
+            <input
+              type="text"
+              id="text-input"
+              name="keyword"
+              placeholder="Try calm, sunrise, ocean..."
+              autocomplete="off"
+            >
+            <button type="submit" id="new-mood-button">Curate Mood</button>
+          </form>
+
+          <div class="divider" role="presentation"></div>
+
+          <button class="random-button" id="random-mood-button" type="button">
+            Random Mood
+          </button>
+
+          <div class="loading-indicator" id="loading-indicator" role="status" aria-live="assertive" aria-hidden="true">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </section>
+
+        <section class="keyword-history" aria-label="Recent mood keywords">
+          <h2>Recent sparks</h2>
+          <ul id="keyword-history-list"></ul>
+        </section>
+      </main>
+
+      <footer class="page-footer">
+        <p>
+          Crafted with intention by the Moodscaper team. Images powered by Unsplash.
+        </p>
+      </footer>
+    </div>
+
+    <div class="ambient-blob ambient-blob--one"></div>
+    <div class="ambient-blob ambient-blob--two"></div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
